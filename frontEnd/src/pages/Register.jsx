@@ -34,7 +34,7 @@ export default function Register(){
              navigate("/");
        } 
 
-    },[]);
+    },[navigate]);
 
 
     const handleSubmit= async(event)=> {
