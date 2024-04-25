@@ -11,7 +11,7 @@ import { Buffer } from "buffer";
 
 export default function Avatar(){
 
-    const api ="https://api.multiavatar.com/45678945";
+    // const api ="https://api.multiavatar.com/45678945";
     const navigate=useNavigate();
     const [avatars, setAvatars]= useState([]);
     const [isLoading, setIsLoading] = useState(true);
@@ -31,7 +31,7 @@ export default function Avatar(){
              navigate("/login");
        } 
 
-    },[]);
+    },[navigate]);
 
       const setProfilePicture =async ()=>{
            if(selectedAvatars === undefined){

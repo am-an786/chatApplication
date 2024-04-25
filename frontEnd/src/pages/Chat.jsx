@@ -30,7 +30,7 @@ export default function Chat() {
     };
 
     fetchData();
-  }, []);
+  }, [navigate]);
 
   useEffect(() => {
     if (currentUser) {
@@ -55,7 +55,7 @@ export default function Chat() {
       }
     };
     fetchContacts();
-  }, [currentUser]);
+  }, [currentUser , navigate]);
 
   const handleChatChange = (chat) => {
     setCurrentChat(chat);
