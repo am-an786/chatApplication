@@ -1,8 +1,8 @@
 const express = require("express");
 const cors =require("cors");
 const mongoose = require("mongoose");
-const  userRoutes = require("./routes/messagesRoutes");
-const  messageRoute = require("./routes/userRoutes");
+const   messageRoute = require("./routes/messagesRoutes");
+const  userRoutes = require("./routes/userRoutes");
 const socket = require("socket.io");
 
 const app= express();
@@ -12,7 +12,7 @@ require("dotenv").config();
 app.use(cors());
 app.use(express.json());
 app.use("/api/auth",userRoutes);
-app.use("/api/messages",messageRoute);
+app.use("/api/messages",messageRoute );
 
 
 //DataBAse Connection
@@ -32,7 +32,7 @@ const server = app.listen(process.env.PORT,()=>{
 
 const io = socket(server, {
     cors:{
-        origin:"http://localhost:3000",
+        origin:process.env.FRONT_END_ORIGIN,
         credentials: true,
     },
 });
